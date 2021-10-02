@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block contents %}
+<h1 style="text-align: center;">Ты втираешь мне какую-то дичь, переведи!</h1>
+
+    <form style="display: flex; align-items: center; flex-direction: column;" action="" method="post">
+        <p style = 'padding: 20px; display: flex; align-items: center; flex-direction: column;'>
+	    <label style = 'padding-right: 20px; padding-bottom: 20px;'for="language">Введите язык, на который хотите перевести:</label>
+	    <input style = 'outline:none; height: 40px; weight: 100px; border-radius: 4px;' class = 'bg-dark text-white' type="text" name="language">
+	</p>
+
+
+    <form style="display: flex; flex-direction: column;" action="" method="post">
+        <p style = 'padding: 20px; display: flex; align-items: center; flex-direction: column;'>
+	    <label style = 'padding-right: 20px;  padding-bottom: 20px;'for="text">Введите свой текст: </label>
+	    <input style = 'outline:none; height: 40px; weight: 100px; border-radius: 4px;' class = 'bg-dark text-white' type="text" name="text">
+	</p>
+	<p style="width: 100%; display: flex; justify-content: center;">
+	    <input style="" class = 'sub' style = 'font-family: Arial; margin: 0 100px;' class = "btn btn-primary bg-light text-dark" type="submit">
+	</p>
+    </form>
+
+
+    <br>
+    <br>
+    <br>
+    <h3>Output label:</h3>
+    <p>{{my_string}}</p>
+    <p>{{lang}}</p>
+    {% if message %}
+        <h3>{{ message }}</h3>
+    {% endif %}
+{% endblock %}
