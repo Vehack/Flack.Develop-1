@@ -18,25 +18,24 @@ def login():
         attention = 'Отлично!'
         message = 'Ваш логин - '+ username + '. Ваш пароль - ' + password + '. Вы готовы продолжить?'
 
-    return render_template('index.html', message = message, attention = attention, title='Франкейштейн')
+    return render_template('index.html', message = message, attention = attention, title='Франкенштейн')
 
 
 
 @app.route('/translator', methods=['POST', 'GET'])
-def translater():
+def translator():
     code_dict = {'Russian': 'ru', 'English': 'en', 'Spanish': 'es', 'French': 'fr', 'German': 'de'}
 
-    translator = Translator()
+    translator = Translator(service_urls=['translate.googleapis.com'])
 
     if request.method == 'POST':
-        text = request.form.get('text')  # запрос к данным формы
+        text = request.form.get('text')
         language = request.form.get('language')
         if language in code_dict.keys():
             lang_edited = code_dict[language]
             translation = translator.translate(text, dest=lang_edited)
             translated_message = translation.text
-            return render_template('translator.html', my_string=translated_message,
-                                   lang='Your native language is ' + translation.src)
+            return render_template('translator.html', my_string=translated_message)
         else:
             return render_template('translator.html')
     return render_template('translator.html')
@@ -44,4 +43,5 @@ def translater():
 
 
 if __name__ == '__main__':
-    app.run(port=3000, debug=True)
+    app.run(debug=True)
+#debug=True

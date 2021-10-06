@@ -5,14 +5,14 @@
 
     <form style="display: flex; align-items: center; flex-direction: column;" action="" method="post">
         <p style = 'padding: 20px; display: flex; align-items: center; flex-direction: column;'>
-	    <label style = 'padding-right: 20px; padding-bottom: 20px;'for="language">Введите язык, на который хотите перевести:</label>
+	    <label style = 'padding-right: 20px; padding-bottom: 20px;' for="language">Введите язык, на который хотите перевести:</label>
 	    <input style = 'outline:none; height: 40px; weight: 100px; border-radius: 4px;' class = 'bg-dark text-white' type="text" name="language">
 	</p>
 
 
     <form style="display: flex; flex-direction: column;" action="" method="post">
         <p style = 'padding: 20px; display: flex; align-items: center; flex-direction: column;'>
-	    <label style = 'padding-right: 20px;  padding-bottom: 20px;'for="text">Введите свой текст: </label>
+	    <label style = 'padding-right: 20px;  padding-bottom: 20px;' for="text">Введите свой текст: </label>
 	    <input style = 'outline:none; height: 40px; weight: 100px; border-radius: 4px;' class = 'bg-dark text-white' type="text" name="text">
 	</p>
 	<p style="width: 100%; display: flex; justify-content: center;">
@@ -21,10 +21,7 @@
     </form>
 
 
-    <br>
-    <br>
-    <br>
-    <h3>Output label:</h3>
+    <h3>Поле вывода:</h3>
     <p>{{my_string}}</p>
     <p>{{lang}}</p>
     {% if message %}
