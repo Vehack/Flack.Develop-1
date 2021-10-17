@@ -2,15 +2,17 @@
 
 {% block contents %}
     <br>
-    <h3>{{ attention }}</h3>
+	<div class="container">
+		<h3>{{ attention1 }}</h3>
+	</div>
     <br>
 
-    <form action="" method="post">
-        <p style = 'padding: 20px;'>
+    <form action="#" method="post">
+		<p style = 'padding: 20px;'>
 	    <label style = 'padding-right: 20px;' for="username">Логин</label>
 	    <input style = 'outline:none;' class = 'bg-dark text-white' type="text" name="username">
 	</p>
-	<p style="padding: 20px;">
+		<p style="padding: 20px;">
 	    <label style="padding-right: 10px;" for="password">Пароль</label>
 	    <input style = 'outline:none;' class = 'bg-dark text-white' type="password" name="password">
 	</p>
@@ -19,7 +21,7 @@
 	</p>
     </form>
 
-    {% if message %}
-        <h3>{{ message }}</h3>
-    {% endif %}
+	<div class="container">
+		<h3>{{ message1 }}</h3>
+	</div>
 {% endblock %}

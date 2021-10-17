@@ -6,19 +6,20 @@ app = Flask(__name__)
 def login():
     username = ''
     password = ''
-    attention = 'Введите логин и пароль. '
+    attention1 = 'Введите логин и пароль. '
+    message1 = '...'
     if request.method == 'POST':
         username = request.form.get('username')  # запрос к данным формы
         password = request.form.get('password')
-    message = 'Information will be here'
-    if username == '' or password == '':
-        attention = 'Не получилось!'
-        message = 'Неверный логин или пароль. Пожалуйста, попробуйте снова.'
-    else:
-        attention = 'Отлично!'
-        message = 'Ваш логин - '+ username + '. Ваш пароль - ' + password + '. Вы готовы продолжить?'
 
-    return render_template('index.html', message = message, attention = attention, title='Франкенштейн')
+        if username == '' or password == '':
+            attention1 = 'Не получилось!'
+            message1 = 'Неверный логин или пароль. Пожалуйста, попробуйте снова.'
+        else:
+            attention1 = 'Отлично!'
+            message1 = 'Ваш логин - '+ username + '. Ваш пароль - ' + password + '. Вы готовы продолжить?'
+
+    return render_template('index.html', message1 = message1, attention1 = attention1, title='Франкенштейн')
 
 
 
@@ -37,8 +38,8 @@ def translator():
             translated_message = translation.text
             return render_template('translator.html', my_string=translated_message)
         else:
-            return render_template('translator.html')
-    return render_template('translator.html')
+            return render_template('translator.html',title='Франкенштейн-Переводчик')
+    return render_template('translator.html',title='Франкенштейн-Переводчик')
 
 
 
