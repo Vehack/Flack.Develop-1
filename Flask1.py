@@ -4,8 +4,6 @@ from googletrans import *
 app = Flask(__name__)
 @app.route('/', methods=['post', 'get'])
 def login():
-    username = ''
-    password = ''
     attention1 = 'Введите логин и пароль. '
     message1 = '...'
     if request.method == 'POST':
@@ -25,7 +23,7 @@ def login():
 
 @app.route('/translator', methods=['POST', 'GET'])
 def translator():
-    code_dict = {'Russian': 'ru', 'English': 'en', 'Spanish': 'es', 'French': 'fr', 'German': 'de'}
+    code_dict = {'chinese (traditional)': 'zh-tw','Russian': 'ru', 'English': 'en', 'Spanish': 'es', 'French': 'fr', 'German': 'de'}
 
     translator = Translator(service_urls=['translate.googleapis.com'])
 

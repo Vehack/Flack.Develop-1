@@ -5,7 +5,7 @@
 
     <form style="display: flex; align-items: center; flex-direction: column;" action="" method="post">
         <p style = 'padding: 20px; display: flex; align-items: center; flex-direction: column;'>
-	    <label style = 'padding-right: 20px; padding-bottom: 20px;' for="language">Введите язык, на который хотите перевести:</label>
+	    <label style = 'padding-right: 20px; padding-bottom: 20px;' for="language">Введите язык, на который хотите перевести(Поддерживаемые - English,Russian,Chinese,French,German,Spanish):</label>
 	    <input style = 'outline:none; height: 40px; weight: 100px; border-radius: 4px;' class = 'bg-dark text-white' type="text" name="language">
 	</p>
 
@@ -16,14 +16,12 @@
 	    <input style = 'outline:none; height: 40px; weight: 100px; border-radius: 4px;' class = 'bg-dark text-white' type="text" name="text">
 	</p>
 	<p style="width: 100%; display: flex; justify-content: center;">
-	    <input style="" class = 'sub' style = 'font-family: Arial; margin: 0 100px;' class = "btn btn-primary bg-light text-dark" type="submit">
+	    <input class = 'sub' style = 'font-family: Arial; margin: 0 100px;' class = "btn btn-primary bg-light text-dark" type="submit">
 	</p>
     </form>
 
-
-    <h3>Поле вывода:</h3>
-    <p>{{my_string}}</p>
-    <p>{{lang}}</p>
+    <h3 style = 'padding: 20px; display: flex; align-items: center; flex-direction: column;'>Поле вывода:</h3>
+    <p style = 'padding: 20px; display: flex; align-items: center; flex-direction: column;'>{{my_string}}</p>
     {% if message %}
         <h3>{{ message }}</h3>
     {% endif %}
