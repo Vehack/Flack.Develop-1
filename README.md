@@ -1,1 +1,1 @@
-# Flack.Develop-1
+# This project contains 2 laboratory works - translator and registration.
